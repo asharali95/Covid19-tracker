@@ -14,7 +14,7 @@ function App() {
         <Route path="/Search" component={Search}/>
         <Route path="/Info" component={Info}/>
         <Route path="/Error" component={Error}/>
-        <Route path="/Test" component={Test}/>
+        <Route path="/Test/:searchedCountry" component={Test}/>
       </Switch>
     </div>
   );

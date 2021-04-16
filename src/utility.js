@@ -33,3 +33,18 @@ export const categorizedData = (countriesData) =>{
     }
     return dataArr
 }
+
+export var retrieveSpecificCountryData = (data,searchedCountry ) =>{
+  var searchedCountryData = []
+  for(var i in data){
+      if(data[i].countryName === searchedCountry){
+      // searchedCountryData = {
+      //        countryName: data[i].countryName, 
+      //        countryinfo: {
+      //            ...data[i].countryInfo
+      //        }
+      searchedCountryData.push({countryName: data[i].countryName, countryinfo: {...data[i].countryInfo}})
+      }
+  }
+  return searchedCountryData
+}
