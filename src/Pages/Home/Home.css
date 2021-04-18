@@ -1,0 +1,35 @@
+.home{
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 100vh;
+    grid-template-columns: repeat(2,1fr);
+    background-color: #FAFAFA;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+}
+.right{
+}
+.left-content{
+    max-width: 500px;
+    transform: translate(40px, 200px);
+}
+.left-content h1{
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif;
+    color: #848484;
+}
+.left-content p{
+    font-size: 18px ;
+}
+.virus-image{
+    width: 70%;
+    height: 70%;
+    background-image: url("../../assets/virus-img-22.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}

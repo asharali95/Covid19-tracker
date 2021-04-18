@@ -1,9 +1,9 @@
 import React from 'react'
-
+import "./Error.css"
 const Error = () => {
     return (
         <div>
-            this is error
+            This is error page
         </div>
     )
 }
