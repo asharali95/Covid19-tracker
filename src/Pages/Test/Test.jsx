@@ -1,62 +1,44 @@
 import {useEffect} from "react"
 import { connect } from "react-redux";
-import { setSpecificCountryData } from "../../Redux/countryData/countryDataActions/countryDataActions";
-// import { retrieveSpecificCountryData } from "../../Redux/countryData/countryDataActions/countryDataActions"
+import Navbar from "../../Components/Navbar/Navbar";
+import { setSpecificCountryData } from "../../Redux/specificCountryData/specificCountryDataActions";
 
 import "./Test.css";
-const Test = ({ match:{params:{searchedCountry}},setSpecificCountryData, covid_data }) => {
+const Test = ({ match:{params:{searchedCountry}},setSpecificCountryData,data}) => {
+  console.log(data);
     useEffect(() => {
-      setSpecificCountryData(covid_data,searchedCountry)
+      setSpecificCountryData(searchedCountry)
     },[])
   return (
     <div>
-      {covid_data.map(data =>
-      <div>
+      <Navbar/>
+      <div
+            style={{
+              backgroundImage: `url(${data.countryInfo.flag})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+            className="flag"
+          ></div>
+      <h1>
         {data.countryName}
-        {/* {data.countryinfo.deaths} */}
-      </div>
-        
-      )}
+      </h1>
+      <h3>active: {data.countryInfo.active}</h3>
+      <h3>cases: {data.countryInfo.cases}</h3>
+      <h3>continent: {data.countryInfo.continent}</h3>
+      <h3>critical: {data.countryInfo.critical}</h3>
+      <h3>death: {data.countryInfo.deaths}</h3>
     </div>
   )
 };
-var mapState = (state) => ({
-  covid_data: state.covid_Data,
-});
+
+var mapState = (state) =>({
+  data: state.specific_country_data
+})
 var actions={
   setSpecificCountryData
 }
 export default connect(mapState,actions)(Test);
 
 
-
-
-
-
-
-
-
- {/* {covid_data.map((data) => ( */}
-        {/* <div> */}
-          {/* <h2>{data.countryinfo.active}</h2> */}
-          {/* <div
-            style={{
-              backgroundImage: `url(${data.countryinfo.flag})`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            className="flag"
-          ></div> */}
-          {/* <h1>{data.countryName}</h1>
-          <h3>cases: {data.countryinfo.cases}</h3>
-          <h3>Continent: {data.countryinfo.continent}</h3>
-          <h3>Active: {data.countryinfo.active}</h3>
-          <h3>Death: {data.countryinfo.deaths}</h3>
-          <h3>Recovered: {data.countryinfo.recovered}</h3>
-          <h3>Today's deaths: {data.countryinfo.todayDeaths}</h3>
-          <h3>Population: {data.countryinfo.population}</h3>
-          <h3>Critical: {data.countryinfo.critical}</h3>
-          <h3>Tests: {data.countryinfo.tests}</h3> */}
-        {/* </div> */}
-      {/* ))} */}

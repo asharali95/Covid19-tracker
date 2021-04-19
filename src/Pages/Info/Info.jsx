@@ -3,7 +3,7 @@ import React from 'react'
 const Info = () => {
     return (
         <div>
-            this is info page
+            <h1>{}</h1>
         </div>
     )
 }

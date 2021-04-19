@@ -11,8 +11,8 @@ function App() {
       <Switch>
         <Route path="/" component={Home} exact/>
         <Route path="/Info" component={Info}/>
-        <Route path="/Error" component={Error}/>
         <Route path="/Test/:searchedCountry" component={Test}/>
+        <Route component={Error}/>
       </Switch>
     </div>
   );

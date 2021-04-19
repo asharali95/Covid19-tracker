@@ -20,19 +20,3 @@ export var retrieveData = () => async (dispatch) => {
     console.log(error);
   }
 };
-
-export var setSpecificCountryData = (countryData,searchedCountry) => (dispatch) =>{
-  try {
-    var data = countryData.filter(countryArr => countryArr.countryName === searchedCountry)
-
-  dispatch({
-    type: SET_COUNTRY_DATA,
-    payload:{
-    data
-    }
-  })
-
-  } catch (error) {
-    console.log(error)
-  } 
-}
