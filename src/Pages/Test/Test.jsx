@@ -14,7 +14,7 @@ const Test = ({ match:{params:{searchedCountry}},setSpecificCountryData,data}) =
       <Navbar/>
       <div
             style={{
-              backgroundImage: `url(${data.countryInfo.flag})`,
+              backgroundImage: `url(${data?.countryInfo?.flag})`,
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
@@ -22,13 +22,13 @@ const Test = ({ match:{params:{searchedCountry}},setSpecificCountryData,data}) =
             className="flag"
           ></div>
       <h1>
-        {data.countryName}
+        {data?.countryName}
       </h1>
-      <h3>active: {data.countryInfo.active}</h3>
-      <h3>cases: {data.countryInfo.cases}</h3>
-      <h3>continent: {data.countryInfo.continent}</h3>
-      <h3>critical: {data.countryInfo.critical}</h3>
-      <h3>death: {data.countryInfo.deaths}</h3>
+      <h3>active: {data?.countryInfo?.active}</h3>
+      <h3>cases: {data?.countryInfo?.cases}</h3>
+      <h3>continent: {data?.countryInfo?.continent}</h3>
+      <h3>critical: {data?.countryInfo?.critical}</h3>
+      <h3>death: {data?.countryInfo?.deaths}</h3>
     </div>
   )
 };
