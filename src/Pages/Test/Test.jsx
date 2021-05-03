@@ -1,44 +1,33 @@
-import {useEffect} from "react"
+import React from "react";
+import { Doughnut } from "react-chartjs-2";
 import { connect } from "react-redux";
-import Navbar from "../../Components/Navbar/Navbar";
-import { setSpecificCountryData } from "../../Redux/specificCountryData/specificCountryDataActions";
-
 import "./Test.css";
-const Test = ({ match:{params:{searchedCountry}},setSpecificCountryData,data}) => {
-  console.log(data);
-    useEffect(() => {
-      setSpecificCountryData(searchedCountry)
-    },[])
+
+const Test = ({ specificCountryData }) => {
+  var {
+    todayCases,
+    todayDeaths,
+    todayRecovered,
+  } = specificCountryData.countryInfo;
+  // console.log(active);
+  const data = {
+    labels: ["Today's cases", "Today's death", "Today's recovery"],
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [todayCases, todayDeaths, todayRecovered],
+        backgroundColor: ["#00578B","#FF1E41", "#7ED957"],
+        hoverOffset: 4,
+      },
+    ],
+  };
   return (
-    <div>
-      <Navbar/>
-      <div
-            style={{
-              backgroundImage: `url(${data?.countryInfo?.flag})`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            className="flag"
-          ></div>
-      <h1>
-        {data?.countryName}
-      </h1>
-      <h3>active: {data?.countryInfo?.active}</h3>
-      <h3>cases: {data?.countryInfo?.cases}</h3>
-      <h3>continent: {data?.countryInfo?.continent}</h3>
-      <h3>critical: {data?.countryInfo?.critical}</h3>
-      <h3>death: {data?.countryInfo?.deaths}</h3>
+    <div className="Test">
+      <Doughnut data={data} />
     </div>
-  )
+  );
 };
-
-var mapState = (state) =>({
-  data: state.specific_country_data
-})
-var actions={
-  setSpecificCountryData
-}
-export default connect(mapState,actions)(Test);
-
-
+var mapState = (state) => ({
+  specificCountryData: state.specific_country_data,
+});
+export default connect(mapState)(Test);
