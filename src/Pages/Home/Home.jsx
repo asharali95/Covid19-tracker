@@ -16,7 +16,6 @@ const Home = ({retrieveData}) => {
                   <p>In light of coronavirus outbreak, search out your country and check up-to-date covid situation from here</p>                
                   <SearchForm/>
                 </div>
-                {/* <Link to={`test/abc`}><button>Test</button></Link> */}
             </div>
             <div className="right flex">
                 <div className="virus-image"></div>

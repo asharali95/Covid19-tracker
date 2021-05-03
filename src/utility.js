@@ -34,7 +34,13 @@ export const categorizedData = (countriesData) =>{
     }
     return dataArr
 }
+export var searchCountry = (data,searchedCountry) =>{
+  var covidData=data.find((country) => country.countryName.toLowerCase()===searchedCountry.toLowerCase());
+  if(covidData) return true
+  else return false
+  // return data.find((country) => country.countryName.toLowerCase()===searchedCountry.toLowerCase())
 
+}
 // export var retrieveSpecificCountryData = (data,searchedCountry) =>{
 //   var searchedCountryData = []
 //   for(var i in data){
