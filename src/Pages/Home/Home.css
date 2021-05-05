@@ -16,7 +16,7 @@
 }
 .left-content{
     max-width: 500px;
-    transform: translate(40px, 200px);
+    transform: translate(40px, 300px);
 }
 .left-content h1{
     font-size: 50px;
