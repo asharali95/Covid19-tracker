@@ -1,0 +1,21 @@
+
+.container{
+    height: calc(100vh - 64px);
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    background-color: blue;
+}
+.right{
+}
+.img{
+    width: 500px;
+    height: 500px;
+    background-image: url(../../assets/mask-img.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
