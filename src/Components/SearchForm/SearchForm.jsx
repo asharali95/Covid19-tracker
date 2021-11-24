@@ -11,11 +11,14 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: "30ch",
     },
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 }));
 const SearchForm = ({ data }) => {
   var [searchedCountry, setSearchedCountry] = useState("");
-
+  console.log(searchedCountry);
   const classes = useStyles();
   return (
     <form
@@ -35,7 +38,7 @@ const SearchForm = ({ data }) => {
         style={{ outline: "none", textDecoration: "none" }}
         to={
           searchCountry(data, searchedCountry) === true
-            ? `Info/${searchedCountry}`
+            ? `/Info/${searchedCountry}`
             : `/error`
         }
       >

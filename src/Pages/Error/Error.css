@@ -1,32 +1,30 @@
-
-.container{
-    height: calc(100vh - 64px);
+.container {
+  height: calc(100vh - 64px);
 }
-.flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
 }
-.left-content{
-    transform: translate(-20%,-20%);
+.left-content {
+  transform: translate(-20%, -20%);
 }
-.heading h1{
-    font-family: 'Open Sans', sans-serif;
-    color: #848484;
+.heading h1 {
+  font-family: "Open Sans", sans-serif;
+  color: #848484;
 }
-.content{
-
+.content {
 }
-.content p{
-    padding: 20px;
+.content p {
+  padding: 20px;
 }
-.right{
+.right {
 }
-.img{
-    width: 500px;
-    height: 500px;
-    background-image: url(../../assets/mask-img.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+.img {
+  width: 500px;
+  height: 500px;
+  background-image: url(../../assets/mask-img.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
